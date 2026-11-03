@@ -1,0 +1,101 @@
+{
+  "context": {
+    "title": "Synthetic Kazakhstan University Research Server Incident",
+    "institution": "Astana IT University",
+    "course": "Fault Tolerance",
+    "year": "2026-2027",
+    "host": "Research-Server-01",
+    "note": "Synthetic educational data. Not a real AITU or Kazakhstan university incident."
+  },
+  "requirements": {
+    "rpo_minutes": 5,
+    "rto_minutes": 30,
+    "anomaly_threshold": 0.75
+  },
+  "events": [
+    {
+      "time": "09:01",
+      "minute": 1,
+      "event": "15 failed logins",
+      "source": "10.20.4.15",
+      "severity": "Medium",
+      "failed_logins": 15
+    },
+    {
+      "time": "09:03",
+      "minute": 3,
+      "event": "21 failed logins",
+      "source": "10.20.4.15",
+      "severity": "High",
+      "failed_logins": 21
+    },
+    {
+      "time": "09:04",
+      "minute": 4,
+      "event": "Successful login",
+      "source": "10.20.4.15",
+      "severity": "High"
+    },
+    {
+      "time": "09:07",
+      "minute": 7,
+      "event": "320 files modified",
+      "source": "10.20.4.15",
+      "severity": "Critical",
+      "files_modified": 320
+    },
+    {
+      "time": "09:08",
+      "minute": 8,
+      "event": "CPU usage increased to 95%",
+      "source": "Research-Server-01",
+      "severity": "High",
+      "cpu": 0.95
+    },
+    {
+      "time": "09:10",
+      "minute": 10,
+      "event": "1,200 files encrypted",
+      "source": "Research-Server-01",
+      "severity": "Critical",
+      "files_encrypted": 1200
+    },
+    {
+      "time": "09:12",
+      "minute": 12,
+      "event": "Backup deletion attempt",
+      "source": "Research-Server-01",
+      "severity": "Critical"
+    },
+    {
+      "time": "09:13",
+      "minute": 13,
+      "event": "Outbound connection to unknown IP",
+      "source": "Research-Server-01",
+      "severity": "High",
+      "destination": "185.244.25.91"
+    },
+    {
+      "time": "09:15",
+      "minute": 15,
+      "event": "Database access spike",
+      "source": "Research-Server-01",
+      "severity": "High",
+      "db_requests": 8400
+    },
+    {
+      "time": "09:18",
+      "minute": 18,
+      "event": "Antivirus disabled",
+      "source": "Research-Server-01",
+      "severity": "Critical"
+    }
+  ],
+  "anomaly_scores": [
+    {"event": "Login failures", "normal": 0.10, "observed": 0.81},
+    {"event": "File modifications", "normal": 0.12, "observed": 0.96},
+    {"event": "CPU usage", "normal": 0.20, "observed": 0.88},
+    {"event": "Outbound traffic", "normal": 0.15, "observed": 0.79},
+    {"event": "Database requests", "normal": 0.18, "observed": 0.91}
+  ]
+}
